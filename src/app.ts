@@ -1,3 +1,10 @@
-const greeting: string = "Hello world";
+import express from 'express';
 
-const numbers: number[] = [1, 2, 3];
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+app.get('/', (req, res) => {
+    res.send('Hello');
+});
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
